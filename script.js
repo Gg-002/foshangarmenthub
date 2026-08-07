@@ -62,9 +62,9 @@ function initWhatsApp() {
   const { whatsappNumber: number, whatsappMessage: message } = SITE_CONFIG;
   qsa('[data-whatsapp]').forEach(el => {
     if (!number) { el.href = 'contact.html'; return; }
-    const url = new URL(`https://wa.me/${number}`);
-    if (message) url.searchParams.set('text', message);
-    el.href = url.toString();
+    let url = `https://wa.me/${number}`;
+    if (message) url += `?text=${encodeURIComponent(message)}`;
+    el.href = url;
   });
 }
 
