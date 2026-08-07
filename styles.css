@@ -28,6 +28,7 @@
 .hero-inner{width:100%;margin:0;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:560px}
 .hero-copy{padding:90px max(20px,calc((100vw - var(--max))/2)) 90px 60px;display:flex;flex-direction:column;align-items:flex-start;gap:26px;max-width:none;margin:0;grid-template-columns:none}
 .hero-copy .eyebrow{margin:0;color:var(--orange);font:700 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase}
+.hero-copy .eyebrow:before{display:none}
 .hero-copy .eyebrow span{position:relative;padding-left:48px;display:inline-block}
 .hero-copy .eyebrow span:before{content:'';position:absolute;left:0;top:50%;width:36px;height:1.5px;background:var(--orange);transform:translateY(-50%)}
 .hero h1.hero-title{font:800 clamp(80px,12vw,160px)/.88 var(--display);text-transform:uppercase;letter-spacing:-.04em;margin:6px 0 0;color:var(--ink);max-width:760px;text-indent:0;justify-self:auto;align-self:auto;display:block}
