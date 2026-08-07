@@ -32,8 +32,10 @@
 .hero-copy .eyebrow span{position:relative;padding-left:40px;display:inline-block}
 .hero-copy .eyebrow span:before{content:'';position:absolute;left:0;top:50%;width:30px;height:1.5px;background:var(--orange);transform:translateY(-50%)}
 .hero h1.hero-title{font:800 clamp(70px,11vw,140px)/.88 var(--display);text-transform:uppercase;letter-spacing:-.04em;margin:2px 0 0;color:var(--ink);max-width:720px;text-indent:0;justify-self:auto;align-self:auto;display:block}
-.hero-sub{font:700 clamp(13px,1.05vw,16px)/1.45 var(--body);text-transform:uppercase;color:var(--ink);max-width:480px;margin:4px 0 0;letter-spacing:.012em;justify-self:auto;text-align:left;display:block}
+.hero-sub{font:700 clamp(16px,1.4vw,21px)/1.45 var(--body);text-transform:uppercase;color:var(--ink);max-width:540px;margin:6px 0 0;letter-spacing:.012em;justify-self:auto;text-align:left;display:block}
 .hero-sub .hero-accent{color:var(--orange)}
+.hero-specialties{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px;padding:14px 22px;border:1px solid var(--ink);background:transparent;font:600 13px/1.4 var(--body);letter-spacing:.02em;color:var(--ink);max-width:620px}
+.hero-specialties:before{content:'';display:inline-block;width:8px;height:8px;background:var(--orange);border-radius:50%;margin-right:4px;flex:none}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
 .hero-actions .btn{padding:14px 22px;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
 .btn-outline{background:#fff;border:1px solid var(--ink);color:var(--ink)}
