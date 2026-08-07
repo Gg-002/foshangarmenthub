@@ -9,8 +9,8 @@
    Reference header + hero overrides ("MADE IN FOSHAN" layout)
    ───────────────────────────────────────────────────────────── */
 
-.utility{background:var(--paper);color:var(--orange);font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--line)}
-.utility .container{height:36px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.utility{background:#0b1210;color:var(--orange);font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(255,90,31,.25)}
+.utility .container{height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .site-header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);color:var(--ink);backdrop-filter:none}
 .site-header .nav{height:82px}
 .logo{display:inline-flex;align-items:baseline;gap:0;font:800 27px/1 var(--display);text-transform:none;letter-spacing:-.02em;color:var(--ink);background:none;padding:0}
