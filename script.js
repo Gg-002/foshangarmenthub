@@ -1,6 +1,6 @@
 const SITE_CONFIG = {
   whatsappNumber: '16047679938',
-  whatsappMessage: "Hello.\nCan we help you?"
+  whatsappMessage: "Hello\nCan we help you?"
 };
 
 const qs = (s, root = document) => root.querySelector(s);
