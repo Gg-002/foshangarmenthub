@@ -1,6 +1,6 @@
 const SITE_CONFIG = {
   whatsappNumber: '16047679938',
-  whatsappMessage: "Hi, I'm interested in your Foshan garment manufacturing services. Could we chat about my project?"
+  whatsappMessage: "Hello.\nCan we help you?"
 };
 
 const qs = (s, root = document) => root.querySelector(s);
