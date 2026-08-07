@@ -35,7 +35,6 @@
 .hero-sub{font:700 clamp(16px,1.4vw,21px)/1.45 var(--body);text-transform:uppercase;color:var(--ink);max-width:540px;margin:6px 0 0;letter-spacing:.012em;justify-self:auto;text-align:left;display:block}
 .hero-sub .hero-accent{color:var(--orange)}
 .hero-specialties{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px;padding:14px 22px;border:1px solid var(--ink);background:transparent;font:600 13px/1.4 var(--body);letter-spacing:.02em;color:var(--ink);max-width:620px}
-.hero-specialties:before{content:'';display:inline-block;width:8px;height:8px;background:var(--orange);border-radius:50%;margin-right:4px;flex:none}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
 .hero-actions .btn{padding:14px 22px;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
 .btn-outline{background:#fff;border:1px solid var(--ink);color:var(--ink)}
