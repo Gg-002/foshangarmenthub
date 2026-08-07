@@ -9,6 +9,12 @@
    Reference header + hero overrides ("MADE IN FOSHAN" layout)
    ───────────────────────────────────────────────────────────── */
 
+/* Floating WhatsApp button (bottom-right) */
+.whatsapp-float{position:fixed;bottom:24px;right:24px;width:58px;height:58px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.4);z-index:99;transition:transform .2s,box-shadow .2s}
+.whatsapp-float:hover{transform:scale(1.08);box-shadow:0 10px 30px rgba(37,211,102,.55);color:#fff}
+.whatsapp-float svg{display:block}
+@media(max-width:680px){.whatsapp-float{bottom:18px;right:18px;width:52px;height:52px}.whatsapp-float svg{width:26px;height:26px}}
+
 .utility{background:#0b1210;color:var(--orange);font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(255,90,31,.25)}
 .utility .container{height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .utility a.utility-msg{color:var(--orange);text-decoration:none;transition:color .2s}
