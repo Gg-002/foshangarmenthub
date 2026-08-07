@@ -1,4 +1,7 @@
-const SITE_CONFIG = {};
+const SITE_CONFIG = {
+  whatsappNumber: '16047679938',
+  whatsappMessage: "Hi, I'm interested in your Foshan garment manufacturing services. Could we chat about my project?"
+};
 
 const qs = (s, root = document) => root.querySelector(s);
 const qsa = (s, root = document) => [...root.querySelectorAll(s)];
@@ -56,10 +59,12 @@ function initForms() {
 }
 
 function initWhatsApp() {
-  const number = SITE_CONFIG.whatsappNumber;
+  const { whatsappNumber: number, whatsappMessage: message } = SITE_CONFIG;
   qsa('[data-whatsapp]').forEach(el => {
-    if (number) el.href = `https://wa.me/${number}`;
-    else el.href = 'contact.html';
+    if (!number) { el.href = 'contact.html'; return; }
+    const url = new URL(`https://wa.me/${number}`);
+    if (message) url.searchParams.set('text', message);
+    el.href = url.toString();
   });
 }
 
