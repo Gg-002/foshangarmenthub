@@ -42,7 +42,7 @@
 .hero h1.hero-title{font:800 clamp(70px,11vw,140px)/.88 var(--display);text-transform:uppercase;letter-spacing:-.04em;margin:2px 0 0;color:var(--ink);max-width:720px;text-indent:0;justify-self:auto;align-self:auto;display:block}
 .hero-sub{font:700 clamp(19px,1.75vw,26px)/1.45 var(--body);text-transform:uppercase;color:var(--ink);max-width:580px;margin:6px 0 0;letter-spacing:.012em;justify-self:auto;text-align:left;display:block}
 .hero-sub .hero-accent{color:var(--orange)}
-.hero-specialties{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px;padding:14px 22px;border:1px solid var(--ink);background:transparent;font:600 13px/1.4 var(--body);letter-spacing:.02em;color:var(--ink);max-width:620px;position:relative}
+.hero-specialties{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px;padding:14px 22px;border:1px solid var(--ink);background:transparent;font:600 13px/1.4 var(--body);letter-spacing:.02em;color:var(--ink);max-width:580px;position:relative}
 .hero-specialties:before{content:'';position:absolute;left:-1px;top:50%;transform:translateY(-50%);width:6px;height:38px;background:var(--orange)}
 .hero-specialties .spec-label{color:var(--ink);font-weight:700;margin-right:4px;padding-right:10px;border-right:1px solid var(--line)}
 .hero-specialties .spec-cat{color:var(--orange);font-weight:700;letter-spacing:.04em}
