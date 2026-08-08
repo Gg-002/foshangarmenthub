@@ -30,7 +30,7 @@
 ## 3. File map
 
 ```
-index.html          ← homepage (hero + offer + customers + strength + gallery + facility + news)
+index.html          ← homepage (hero + offer + customers + strength + gallery + facility + social)
 about.html          ← company positioning
 factories.html      ← manufacturing network + quality route
 gallery.html        ← filterable product gallery (JS-driven)
@@ -39,9 +39,12 @@ contact.html        ← inquiry form (demo, does not submit)
 styles.css          ← all styles (CSS variables in :root)
 script.js           ← navigation, reveal-on-scroll, gallery filter, lightbox, WhatsApp wiring
 README.md           ← pre-launch checklist (form endpoint, real images, certificates, etc.)
-factory photo/      ← local hero photo asset (kept for reference)
-reference/          ← design reference images (gitignored? currently tracked)
+CLAUDE.md           ← this file — project context for future Claude sessions
+factory photo/      ← local photo asset (kept for reference)
+reference/          ← design reference images uploaded by owner (not deploy assets)
 ```
+
+**GitHub**: https://github.com/Gg-002/foshangarmenthub (auto-push on commit).
 
 ---
 
@@ -127,7 +130,7 @@ reference/          ← design reference images (gitignored? currently tracked)
 
 ## 8. WhatsApp integration
 
-### Config (`script.js`)
+### Config (`script.js`) — LIVE
 
 ```js
 const SITE_CONFIG = {
@@ -147,13 +150,20 @@ const SITE_CONFIG = {
 
 **Critical**: use `encodeURIComponent()` (NOT `URLSearchParams.set()`) — the latter encodes spaces as `+` but may mishandle newlines on some platforms. `encodeURIComponent` reliably produces `%0A` for `\n`.
 
-### Floating button
+### Floating button (on every page)
 
 - 58×58px circle, `#25D366`, bottom-right (24px / 18px on mobile).
 - Inline SVG WhatsApp logo (30×30 / 26×26 on mobile).
 - `z-index: 99`, `position: fixed`.
 - Hover: scale 1.08, deeper shadow.
 - Appears on ALL 5 pages, inserted right before `</body>`.
+- Markup is identical across pages; only the `data-whatsapp` attr matters.
+
+### Where WhatsApp buttons live
+
+- Floating button (all 5 pages)
+- Header `.btn-wa-outline` (index.html only — header CTA)
+- Originally a hero `.btn-outline` "Chat on WhatsApp" — was REPLACED with the Specialised-in tag
 
 ---
 
@@ -166,13 +176,40 @@ const SITE_CONFIG = {
 
 ---
 
+## 9b. Social media newsroom (index.html)
+
+- Section ID: `#social`.
+- Layout: 2-column grid (`.social-grid`) — LinkedIn card + Instagram card.
+- Each card has:
+  - **Platform badge** (`.social-badge`): 46×46px rounded square with brand color.
+    - LinkedIn: solid `#0a66c2` + white "in"
+    - Instagram: classic 5-stop gradient (`#f09433 → #e6683c → #dc2743 → #cc2366 → #bc1888`) + white "IG"
+  - **Platform name + handle placeholder** (`.social-meta`).
+  - **Two post previews** (`.social-post`): white card with orange left bar, contains "Latest post" / "Previous post" eyebrow + sample body text.
+  - **Follow CTA** (`.social-follow`): outlined button linking to platform.
+- Card hover: translateY(-4px) + soft shadow.
+- Mobile: stacks to single column, follow button goes full-width.
+
+### State: HANDLE PLACEHOLDERS
+
+- `.social-handle` text is currently `"Handle to be configured"` for BOTH platforms.
+- `.social-follow` `href` is currently `#` for BOTH platforms.
+- Post body text is currently generic filler copy.
+- **Owner will provide real LinkedIn company URL + Instagram handle later.** When they do, update:
+  - `.social-handle` → `@their-handle`
+  - `.social-follow[href]` → real URL
+  - Post text → recent actual posts (manually, since static site)
+- Static site cannot auto-pull from LinkedIn / Instagram APIs — this is intentional manual placeholders.
+
+---
+
 ## 10. Cache-busting strategy
 
 Every HTML file references assets with a query string version:
 
 ```html
-<link rel="stylesheet" href="styles.css?v=22">
-<script defer src="script.js?v=22"></script>
+<link rel="stylesheet" href="styles.css?v=23">
+<script defer src="script.js?v=23"></script>
 ```
 
 - Bump the `?v=N` number whenever `styles.css` or `script.js` content actually changes.
@@ -244,6 +281,15 @@ These items are still placeholders — DO NOT mark site as production-ready unti
 ---
 
 ## 14. Common tasks
+
+### Configure LinkedIn / Instagram when handles arrive
+
+1. In `index.html`, search for `social-handle` (×2) and `data-platform` (×2).
+2. Replace `"Handle to be configured"` with the real `@handle`.
+3. Replace `href="#"` on `.social-follow` with real profile URL.
+4. Replace the two placeholder post bodies per card with the most recent 2 real posts.
+5. Bump cache version.
+6. Commit + push.
 
 ### Add a new page
 1. Copy an existing page as a template.
