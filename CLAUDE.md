@@ -89,7 +89,7 @@ reference/          ← design reference images uploaded by owner (not deploy as
 ### Hero content order (top to bottom)
 
 1. Eyebrow: `One hub. The right factory.` — orange, with leading horizontal rule.
-2. Title: `From fabric to / finished garments` (uppercase, huge).
+2. Title: `Made with / Profession` (uppercase, huge).
 3. Subtitle: 3-line value props — line 1 (orange) `30+ Years Manufacturing Experience`, line 2 `Direct Factory With No Middlemen`, line 3 `Competitive Pricing With Flexible MOQ`.
 4. Specialised-in tag: bordered box with orange left bar; `Specialised in` label (dark, divider-right) + categories in orange.
 
