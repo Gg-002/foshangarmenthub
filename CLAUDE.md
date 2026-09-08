@@ -90,7 +90,7 @@ reference/          ← design reference images uploaded by owner (not deploy as
 
 1. Eyebrow: `One hub. The right factory.` — orange, with leading horizontal rule.
 2. Title: `Made with / Profession` (uppercase, huge).
-3. Subtitle: 3-line value props — line 1 (orange) `30+ Years Manufacturing Experience`, line 2 `Direct Factory With No Middlemen`, line 3 `Competitive Pricing With Flexible MOQ`.
+3. Subtitle: 2-line value props — line 1 `Direct Factory With No Middlemen`, line 2 `Competitive Pricing With Flexible MOQ`.
 4. Specialised-in tag: bordered box with orange left bar; `Specialised in` label (dark, divider-right) + categories in orange.
 
 ---
