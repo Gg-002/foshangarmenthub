@@ -30,7 +30,7 @@
 ## 3. File map
 
 ```
-index.html          ← homepage (hero + offer + customers + strength + gallery + facility + social)
+index.html          ← homepage (hero + why us + what we offer + social)
 about.html          ← company positioning
 factories.html      ← manufacturing network + quality route
 gallery.html        ← filterable product gallery (JS-driven)
