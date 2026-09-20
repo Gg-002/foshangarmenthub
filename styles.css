@@ -31,7 +31,7 @@
 .whatsapp-float{position:fixed;bottom:24px;right:24px;width:58px;height:58px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.4);z-index:99;transition:transform .2s,box-shadow .2s}
 .whatsapp-float:hover{transform:scale(1.08);box-shadow:0 10px 30px rgba(37,211,102,.55);color:#fff}
 .whatsapp-float svg{display:block}
-@media(max-width:680px){.whatsapp-float{bottom:18px;right:18px;width:52px;height:52px}.whatsapp-float svg{width:26px;height:26px}}
+@media(max-width:680px){.whatsapp-float{bottom:18px;right:18px;width:52px;height:52px}.whatsapp-float svg{width:26px;height:26px}.lang-fab{top:118px;right:14px;min-width:120px;padding:7px 10px}}
 
 .utility{background:#0b1210;color:var(--orange);font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(255,90,31,.25)}
 .utility .container{height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px}
@@ -44,6 +44,13 @@
 .lang-switcher .goog-te-gadget-simple .goog-te-menu-value:hover,.lang-switcher .goog-te-gadget-simple span:hover{color:#ffb38a!important}
 .lang-switcher .goog-te-gadget-simple .goog-te-menu-value span:last-child{border-left-color:var(--orange)!important}
 .lang-switcher img{display:none}
+.lang-fab{position:fixed;top:140px;right:24px;z-index:48;background:rgba(255,255,255,.96);padding:8px 12px;border:1px solid var(--line);box-shadow:0 6px 16px rgba(20,32,29,.08);font:700 12px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);min-width:140px}
+.lang-fab #google_translate_element{display:block}
+.lang-fab .goog-te-gadget{font-size:0}
+.lang-fab .goog-te-gadget-simple{background:transparent!important;border:none!important;padding:0!important;font-size:12px!important;letter-spacing:.06em!important}
+.lang-fab .goog-te-gadget-simple span,.lang-fab .goog-te-gadget-simple .goog-te-menu-value{color:var(--ink)!important;text-transform:uppercase!important}
+.lang-fab .goog-te-gadget-simple .goog-te-menu-value span:last-child{border-left-color:var(--ink)!important}
+.lang-fab img{display:none}
 .site-header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);color:var(--ink);backdrop-filter:none}
 .site-header .nav{height:82px}
 .logo{display:inline-flex;align-items:baseline;gap:0;font:800 27px/1 var(--display);text-transform:none;letter-spacing:-.02em;color:var(--ink);background:none;padding:0}
