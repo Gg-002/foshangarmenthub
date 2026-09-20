@@ -1,6 +1,6 @@
 # FoshanGarmentHub Website — CLAUDE.md
 
-> Static B2B lead-generation website for Foshan (China) garment manufacturing. 5 pages, vanilla HTML/CSS/JS, English-only, no build step. Replaces a Codex-style AGENTS.md.
+> Static B2B lead-generation website for Foshan (China) garment manufacturing. 4 pages, vanilla HTML/CSS/JS, English-only, no build step. Replaces a Codex-style AGENTS.md.
 
 ---
 
@@ -10,6 +10,12 @@
 - **Audience**: Overseas buyers (independent brands, e-commerce sellers, wholesalers, global sourcing teams).
 - **Form**: Static site, no backend. Form is demo-only — does NOT submit.
 - **Brand voice**: Confident, industrial, direct. Avoid hype words.
+
+**Pages (4 total)**:
+1. **Home** (`index.html`) — hero + Why us + What we offer + social newsroom.
+2. **Products** (`products.html`) — Children's Apparel + Adult's Apparel. Up to 10 photo slots per category, each with a caption (e.g. "dress") beneath.
+3. **About** (`about.html`) — Section 1 "Get to know us" (intro prose + stats), Section 2 "Core features" (5 cards with photos), Section 3 facility thumbnails (4 cards with captions).
+4. **Contact** (`contact.html`) — Section 1 location info (Location / Contact No / Email / Map), Section 2 Send Message form (Name / Email / Phone or WhatsApp / Message).
 
 ---
 
@@ -31,16 +37,15 @@
 
 ```
 index.html          ← homepage (hero + why us + what we offer + social)
-about.html          ← company positioning
-factories.html      ← manufacturing network + quality route
-gallery.html        ← filterable product gallery (JS-driven)
-contact.html        ← inquiry form (demo, does not submit)
+products.html       ← 2 categories: Children's Apparel + Adult's Apparel (10 photo slots each)
+about.html          ← 3 sections: Get to know us / Core features / Facility thumbnails
+contact.html        ← 2 sections: Location info (with map) + Send Message form
 
 styles.css          ← all styles (CSS variables in :root)
-script.js           ← navigation, reveal-on-scroll, gallery filter, lightbox, WhatsApp wiring
+script.js           ← navigation, reveal-on-scroll, WhatsApp wiring
 README.md           ← pre-launch checklist (form endpoint, real images, certificates, etc.)
 CLAUDE.md           ← this file — project context for future Claude sessions
-factory photo/      ← local photo asset (kept for reference)
+factory photo/      ← local photo asset (kept for reference, not yet wired in)
 reference/          ← design reference images uploaded by owner (not deploy assets)
 ```
 
@@ -156,14 +161,14 @@ const SITE_CONFIG = {
 - Inline SVG WhatsApp logo (30×30 / 26×26 on mobile).
 - `z-index: 99`, `position: fixed`.
 - Hover: scale 1.08, deeper shadow.
-- Appears on ALL 5 pages, inserted right before `</body>`.
+- Appears on ALL 4 pages, inserted right before `</body>`.
 - Markup is identical across pages; only the `data-whatsapp` attr matters.
 
 ### Where WhatsApp buttons live
 
-- Floating button (all 5 pages)
-- Header `.btn-wa-outline` (index.html only — header CTA)
-- Originally a hero `.btn-outline` "Chat on WhatsApp" — was REPLACED with the Specialised-in tag
+- Floating button (all 4 pages)
+- Header `.btn-wa-outline` (every page header)
+- Inline `.btn-outline` "Chat on WhatsApp" appears on `products.html` (Section: "Next step")
 
 ---
 
@@ -171,7 +176,8 @@ const SITE_CONFIG = {
 
 - Light cream background (matches `--paper`).
 - Logo on left, nav center-ish, buttons on right.
-- Right buttons: `WhatsApp` (outline) + `Start a Project` (orange fill).
+- Nav links: **4 items only** — Home · Products · About · Contact (in that order).
+- Right buttons: `WhatsApp` (outline) + `Start a Project` (orange fill). The Start a Project button is hidden on the Contact page (user is already there).
 - Mobile: hamburger menu (`.menu-toggle`), full-screen nav drawer.
 
 ---
@@ -208,12 +214,12 @@ const SITE_CONFIG = {
 Every HTML file references assets with a query string version:
 
 ```html
-<link rel="stylesheet" href="styles.css?v=23">
-<script defer src="script.js?v=23"></script>
+<link rel="stylesheet" href="styles.css?v=24">
+<script defer src="script.js?v=24"></script>
 ```
 
 - Bump the `?v=N` number whenever `styles.css` or `script.js` content actually changes.
-- Same number across all 5 HTML files (keeps them in sync).
+- Same number across all 4 HTML files (keeps them in sync).
 - Bump via `sed -i 's/?v=N/?v=N+1/g' *.html` then commit.
 
 If you change only HTML content (no CSS/JS), bumping is optional but harmless.
@@ -269,13 +275,13 @@ These items are still placeholders — DO NOT mark site as production-ready unti
 
 - [ ] Replace `SITE_CONFIG.whatsappNumber` already done (`16047679938`).
 - [ ] `service@fsgarmenthub.cn` confirmed as contact email (done).
-- [ ] Connect inquiry form (`SITE_CONFIG.formEndpoint` + `initForms()`).
-- [ ] Replace all Unsplash placeholder images with licensed company photography.
+- [ ] Connect Send Message form (`SITE_CONFIG.formEndpoint` + `initForms()`). Current fields: Name / Email / Phone or WhatsApp / Message.
+- [ ] Replace all Unsplash placeholder images with licensed company photography (products page has 20 photo slots; about page has 9 — 5 feature + 4 thumbnail).
 - [ ] Add real logo, favicon, OG image, canonical URL, address, hours, social links.
-- [ ] Verify or remove certificate placeholders.
-- [ ] Verify production figures, customer logos, capacity claims, response times.
+- [ ] Verify map embed coordinates / replace with proper Google Maps embed.
+- [ ] Verify or remove capacity claims (30+ years, 100,000+ m², 500+ workers, 100+ machines).
 - [ ] Add privacy + terms pages.
-- [ ] Add server-side form security (upload rules, spam protection, consent logging).
+- [ ] Add server-side form security (spam protection, consent logging).
 - [ ] Run accessibility, link, mobile, performance audits.
 
 ---
@@ -291,17 +297,23 @@ These items are still placeholders — DO NOT mark site as production-ready unti
 5. Bump cache version.
 6. Commit + push.
 
+### Add a product photo to Products page
+1. Drop image into `factory photo/products/` (or wherever you keep assets).
+2. Open `products.html`. Each category has 10 `<figure class="product-card">` slots.
+3. Replace the `<img src>` and `<figcaption>` caption text.
+4. Bump cache version, commit, push.
+
 ### Add a new page
-1. Copy an existing page as a template.
+1. Copy `products.html` (or another existing page) as a template — already has the 4-link nav.
 2. Update `<title>`, `<meta>`, and body sections.
-3. Bump `?v=N` in the new page's CSS/JS links (match the global version).
-4. Add to nav across all 5 pages.
+3. Add a new nav entry to **all 4** existing HTML files (keep the order Home / Products / About / Contact, append after Contact if needed).
+4. Bump `?v=N` in the new page's CSS/JS links (match the global version).
 5. Commit + push.
 
-### Add a new section to homepage
-1. Add markup inside `<main>` in `index.html` — use existing `.section` / `.section.dark` classes.
+### Add a new section to a page
+1. Add markup inside `<main>` — use existing `.section` / `.section.dark` classes.
 2. Use `.reveal` class on the section for fade-in-on-scroll (handled by `initReveals`).
-3. New styles go in the appropriate block of `styles.css`.
+3. New styles go in the appropriate block of `styles.css` (append, don't refactor).
 4. Bump cache version.
 5. Commit + push.
 
