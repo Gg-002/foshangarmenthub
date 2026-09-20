@@ -126,10 +126,10 @@ reference/          ← design reference images uploaded by owner (not deploy as
 - Background: black `#0b1210`.
 - Height: 38px.
 - Left text: `Since 2000 · Foshan, Guangdong, China · Global OEM / ODM` (orange).
-- Right text: `service@fsgarmenthub.cn` as clickable mailto link (orange, hover `#ffb38a`).
+- Right text: `hello@tomoliapparel.com` as clickable mailto link (orange, hover `#ffb38a`).
 - Border-bottom: `1px solid rgba(255,90,31,.25)` (subtle orange tint).
 
-**Email rule**: every occurrence of `service@fsgarmenthub.cn` in HTML MUST be `service@fsgarmenthub.cn`. Run `grep -onE "service@[A-Za-z.]+" *.html` to verify.
+**Email rule**: every occurrence of `hello@tomoliapparel.com` in HTML MUST be `hello@tomoliapparel.com`. Run `grep -onE "service@[A-Za-z.]+" *.html` to verify.
 
 ---
 
@@ -274,7 +274,7 @@ Read the recent log with `git log --oneline`, identify the desired hash, then ei
 These items are still placeholders — DO NOT mark site as production-ready until verified:
 
 - [ ] Replace `SITE_CONFIG.whatsappNumber` already done (`16047679938`).
-- [ ] `service@fsgarmenthub.cn` confirmed as contact email (done).
+- [ ] `hello@tomoliapparel.com` confirmed as contact email (done).
 - [ ] Connect Send Message form (`SITE_CONFIG.formEndpoint` + `initForms()`). Current fields: Name / Email / Phone or WhatsApp / Message.
 - [ ] Replace all Unsplash placeholder images with licensed company photography (products page has 20 photo slots; about page has 9 — 5 feature + 4 thumbnail).
 - [ ] Add real logo, favicon, OG image, canonical URL, address, hours, social links.
