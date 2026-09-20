@@ -1,4 +1,4 @@
-# FoshanGarmentHub Website — CLAUDE.md
+# TOMOLI Website — CLAUDE.md
 
 > Static B2B lead-generation website for Foshan (China) garment manufacturing. 4 pages, vanilla HTML/CSS/JS, English-only, no build step. Replaces a Codex-style AGENTS.md.
 
@@ -77,9 +77,9 @@ reference/          ← design reference images uploaded by owner (not deploy as
 
 ### Logo
 
-- Text: `FoshanGarment` (dark `--ink`) + `HUB` (orange `--orange`), single inline-flex row.
+- Text: `TOMOLI` (dark `--ink`), single span.
 - On dark sections the logo can invert; on light sections it stays dark.
-- The "F" of "FoshanGarment" defines the left content edge.
+- The "T" of "TOMOLI" defines the left content edge.
 
 ---
 
@@ -129,7 +129,7 @@ reference/          ← design reference images uploaded by owner (not deploy as
 - Right text: `service@fsgarmenthub.cn` as clickable mailto link (orange, hover `#ffb38a`).
 - Border-bottom: `1px solid rgba(255,90,31,.25)` (subtle orange tint).
 
-**Email rule**: every occurrence of `service@FoshanGarmentHub.cn` in HTML MUST be `service@fsgarmenthub.cn`. Run `grep -onE "service@[A-Za-z.]+" *.html` to verify.
+**Email rule**: every occurrence of `service@fsgarmenthub.cn` in HTML MUST be `service@fsgarmenthub.cn`. Run `grep -onE "service@[A-Za-z.]+" *.html` to verify.
 
 ---
 

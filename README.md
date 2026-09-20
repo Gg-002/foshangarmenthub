@@ -1,4 +1,4 @@
-# FoshanGarmentHub Website
+# TOMOLI Website
 
 A responsive, English-language static lead-generation website for Foshan garment manufacturing.
 
