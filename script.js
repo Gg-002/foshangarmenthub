@@ -40,12 +40,19 @@ function initGallery() {
   if (!lightbox) return;
   const image = qs('img', lightbox);
   const close = () => { lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden', 'true'); };
-  cards.forEach(card => card.addEventListener('click', () => {
-    const source = qs('img', card); if (!source) return;
+  const openWith = source => {
+    if (!source) return;
     image.src = source.src; image.alt = source.alt;
     lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden', 'false');
     qs('.lightbox-close', lightbox).focus();
-  }));
+  };
+  cards.forEach(card => card.addEventListener('click', () => openWith(qs('img', card))));
+  // Also wire product-grid cards (children's + adult's apparel gallery)
+  qsa('.product-card').forEach(card => {
+    const source = qs('img', card);
+    if (!source) return;
+    card.addEventListener('click', () => openWith(source));
+  });
   qs('.lightbox-close', lightbox).addEventListener('click', close);
   lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
