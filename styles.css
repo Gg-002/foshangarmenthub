@@ -72,9 +72,9 @@
 .btn-outline:hover{background:var(--ink);color:#fff}
 .hero-visual{position:relative;overflow:hidden;min-height:680px;aspect-ratio:auto;max-height:none;width:100%;align-self:stretch}
 .hero-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:none;background:transparent}
-.hero-images{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:var(--max);margin:0 auto;padding:0 max(20px,calc((100vw - var(--max))/2)) 80px}
-.hero-image{margin:0;aspect-ratio:4/5;overflow:hidden;background:#ddd}
-.hero-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.hero-images{display:grid;grid-template-columns:1fr 1fr;gap:0;width:100%;max-width:none;margin:0;padding:0 0 80px}
+.hero-image{margin:0;aspect-ratio:3/4;overflow:hidden;background:#ddd}
+.hero-image img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s}
 .hero-image:hover img{transform:scale(1.04)}
 .hero-tags{display:none}
 
@@ -116,7 +116,7 @@
 .feature-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);padding:0;display:flex;flex-direction:column;transition:transform .25s,background .25s}
 .feature-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.07)}
 .feature-photo{aspect-ratio:4/3;overflow:hidden}
-.feature-photo img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.feature-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .4s}
 .feature-card:hover .feature-photo img{transform:scale(1.05)}
 .feature-card .feature-num{font:700 24px/1.1 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:18px 24px 10px;color:var(--white);display:block}
 .feature-card h3{font:700 24px/1.1 var(--display);text-transform:uppercase;margin:10px 24px 12px;color:var(--white)}/* unused: h3 removed in phase 3; .feature-num now uses display style */
@@ -128,7 +128,7 @@
 .thumb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:20px}
 .thumb-card{margin:0;background:rgba(255,255,255,.4);border:1px solid var(--line);overflow:hidden;transition:transform .25s}
 .thumb-card:hover{transform:translateY(-4px)}
-.thumb-card img{aspect-ratio:4/5;height:auto}
+.thumb-card img{width:100%;aspect-ratio:4/5;height:auto;object-fit:cover;object-position:top center;background:#f0f0f0}
 .thumb-card figcaption{padding:14px 18px;font:700 15px/1.2 var(--body);text-transform:uppercase;letter-spacing:.04em;color:var(--ink);border-top:1px solid var(--line);text-align:center}
 
 /* Contact: location info items + map embed */
