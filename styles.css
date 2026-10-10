@@ -58,8 +58,8 @@
 .logo{display:inline-flex;align-items:baseline;gap:0;font:800 27px/1 var(--display);text-transform:none;letter-spacing:-.02em;color:var(--ink);background:none;padding:0}
 .logo .logo-main{color:var(--ink)}
 .logo .logo-accent{color:var(--orange);font-style:normal;margin-left:0}
-.logo img{height:24px;width:auto;display:block}
-.footer .logo img{height:36px}
+.logo img{height:40px;width:auto;display:block}
+.footer .logo img{height:60px}
 .site-header .nav-links a{color:var(--ink);font:700 13px/1 var(--body);text-transform:uppercase;letter-spacing:.08em}
 .site-header .nav-links a:hover,.site-header .nav-links a.active{color:var(--orange)}
 .nav-actions{display:flex;align-items:center;gap:10px}
