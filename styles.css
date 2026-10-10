@@ -48,7 +48,7 @@
 .whatsapp-float svg{display:block}
 @media(max-width:680px){.whatsapp-float{bottom:18px;right:18px;width:52px;height:52px}.whatsapp-float svg{width:26px;height:26px}}
 
-.utility{background:var(--ink-deep);color:var(--orange);font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(255,90,31,.25)}
+.utility{background:var(--ink);color:var(--orange);font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(255,90,31,.25)}
 .utility .container{height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .utility a.utility-msg{color:var(--orange);text-decoration:none;transition:color .2s}
 .utility a.utility-msg:hover{color:#ffb38a}
