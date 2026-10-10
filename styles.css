@@ -243,7 +243,7 @@ html[lang="zh-TW"] body{font-family:'Noto Sans TC','PingFang TC','Microsoft Jhen
 
 /* Home: "Why us" → blush (pink from kids' dresses in image #1) */
 #why-us{background:#fff}
-#why-us .deco-blob{width:520px;height:520px;background:var(--blush);top:-160px;right:-120px}
+#why-us .deco-blob{width:520px;height:520px;background:var(--blush);top:-160px;right:-120px;display:none}
 #why-us .container{position:relative;z-index:1}
 
 /* Home: "What we offer" stays .dark — provides contrast anchor */
