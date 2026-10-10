@@ -100,6 +100,7 @@ html[dir="rtl"] .grid-4{direction:rtl}
 html[dir="rtl"] .social-grid{direction:rtl}
 html[dir="rtl"] .footer-top{direction:rtl}
 html[dir="rtl"] body{font-family:'Noto Sans Arabic','Tahoma',sans-serif}
+html[lang="zh-TW"] body{font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif}
 
 .hero{background:#f2efe6;border-top:0;padding:0;display:block;overflow:visible}
 .hero-inner{width:100%;margin:0;display:block}
