@@ -116,7 +116,7 @@
 .dark .product-card figcaption{background:rgba(255,255,255,.04);color:var(--white);border-top-color:rgba(255,255,255,.18)}
 
 /* About: intro prose + stats row */
-.about-intro{max-width:980px;text-align:center}
+.about-intro{max-width:980px;margin:0 auto;text-align:center}
 .about-row{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:36px;align-items:start;margin-top:30px}/* legacy: unused since about-row removed; about-image now video */
 .about-prose{max-width:780px;margin:30px auto 0;text-align:left}
 .about-image{margin:0;width:100%;aspect-ratio:1/1;overflow:hidden;background:#e7e5dc}
