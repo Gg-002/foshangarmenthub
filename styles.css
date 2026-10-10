@@ -83,6 +83,20 @@
 .btn-start{display:inline-flex;align-items:center;justify-content:center;padding:11px 22px;background:var(--orange);color:#fff;font:700 13px/1 var(--body);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--orange);transition:.2s}
 .btn-start:hover{background:#ff7a47;border-color:#ff7a47}
 
+/* Language switcher — sits in .nav-actions before the CTA buttons */
+.lang-select{border:1px solid var(--ink);background:#fff;color:var(--ink);padding:10px 28px 10px 12px;font:700 12px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 16px) center,calc(100% - 11px) center;background-size:5px 5px;background-repeat:no-repeat;transition:.2s}
+.lang-select:hover{border-color:var(--orange);color:var(--orange)}
+.lang-select:focus{outline:2px solid var(--orange);outline-offset:2px}
+/* RTL layout override for languages like Arabic — mirror nav-actions order */
+html[dir="rtl"] .nav-actions{flex-direction:row-reverse}
+html[dir="rtl"] .nav-links{flex-direction:row-reverse}
+html[dir="rtl"] .lang-select{background-position:16px center,11px center;padding:10px 12px 10px 28px}
+html[dir="rtl"] .product-grid{direction:rtl}
+html[dir="rtl"] .grid-4{direction:rtl}
+html[dir="rtl"] .social-grid{direction:rtl}
+html[dir="rtl"] .footer-top{direction:rtl}
+html[dir="rtl"] body{font-family:'Noto Sans Arabic','Tahoma',sans-serif}
+
 .hero{background:#f2efe6;border-top:0;padding:0;display:block;overflow:visible}
 .hero-inner{width:100%;margin:0;display:block}
 .hero-copy{padding:100px max(20px,calc((100vw - var(--max))/2)) 50px;display:flex;flex-direction:column;align-items:center;gap:18px;max-width:none;margin:0;padding-left:0;padding-right:0;width:100%;text-align:center}
