@@ -88,7 +88,7 @@ reference/          ← design reference images uploaded by owner (not deploy as
 
 - Background: cream `--paper`.
 - Layout: full-width 2-column grid (1fr / 1fr). Image extends to right viewport edge.
-- Padding: 100px top/bottom, left/right padded to align with logo "F".
+- Padding: 100px top/bottom, left/right padded to align with logo "T".
 - Total height: ~680px (tuned to fit in viewport without scrolling on most laptops).
 - Right column: `min-height: 680px` matching copy height; image is `position:absolute; inset:0; object-fit:cover`.
 
