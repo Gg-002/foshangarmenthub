@@ -90,7 +90,7 @@ const I18N = {
     'social.instagram.follow': 'Follow on Instagram →',
     /* products — hero */
     'products.hero.title': 'From Fabric to Diverse Finishes',
-    'products.hero.lead': 'We specialize in children\'s wear, knitwear, sportswear, denim, and custom garments. We offer diverse fabrics, colors, trending prints, patterns, and techniques such as embroidery, printing, washing, and customized finishes.',
+    'products.hero.lead': 'We specialize in children\'s wear, knitwear, sportswear, denim, and custom garments. We offer diverse fabrics, colors, trending prints, patterns, and techniques such as embroidery, printing, washing, and customized finishes. Below are some of the products we have worked with our clients.',
     'products.children.title': "Children's<br>apparel.",
     'products.adult.title': "Adult's<br>apparel.",
     'products.next.title': "Next step.",
