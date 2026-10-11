@@ -1,0 +1,6 @@
+# Large binaries — keep out of git, host externally or via Git LFS
+images/*.mp4
+images/*.mov
+*.psd
+*.ai
+*.zip
