@@ -1,6 +1,6 @@
 # TOMOLI Website — CLAUDE.md
 
-> Static B2B lead-generation website for Foshan (China) garment manufacturing. 4 pages, vanilla HTML/CSS/JS, English-only, no build step. Replaces a Codex-style AGENTS.md.
+> Static B2B lead-generation website for Foshan (China) garment manufacturing. 4 pages, vanilla HTML/CSS/JS, **multilingual (7 languages)**, no build step. Replaces a Codex-style AGENTS.md.
 
 ---
 
@@ -9,6 +9,7 @@
 - **What**: One direct gateway to specialized garment manufacturing across Foshan — kids' & adult clothing, activewear, knitwear, denim. OEM / ODM support since 2000.
 - **Audience**: Overseas buyers (independent brands, e-commerce sellers, wholesalers, global sourcing teams).
 - **Form**: Static site, no backend. Form is demo-only — does NOT submit.
+- **Languages**: 7 supported — `en` (English, default), `id` (Indonesian), `th` (Thai), `ru` (Russian), `ar` (Arabic, RTL), `zh-TW` (Traditional Chinese), `tl` (Filipino/Tagalog). See §9c for the i18n contract.
 - **Brand voice**: Confident, industrial, direct. Avoid hype words.
 
 **Pages (4 total)**:
@@ -209,6 +210,62 @@ const SITE_CONFIG = {
 
 ---
 
+## 9c. Internationalisation (i18n) — 7 languages
+
+The site is multilingual even though CLAUDE.md previously said "English-only". Every user-facing string lives in **two places** that must stay in sync:
+
+1. **Inline default in HTML** — the text between `<tag ... data-i18n="key">...</tag>`. This is what visitors see before JS runs and what search engines index. **Always English** in source.
+2. **Translation entries in `script.js`** — inside the `const I18N = { ... }` object, one block per language (en / id / th / ru / ar / zh-TW / tl). Each block maps the same `data-i18n` key to a translated string.
+
+### How it works at runtime
+
+- `script.js` reads the saved language from `localStorage.lang` (default `en`), then on `DOMContentLoaded` replaces every `[data-i18n]` element's text with `I18N[currentLang()][key]`.
+- `<select id="lang-select">` in the header lets the visitor switch — change writes back to `localStorage` and re-applies.
+- Arabic (`ar`) toggles `<html dir="rtl">` so layout flips.
+- `data-i18n-placeholder` is also supported for `<input>` / `<textarea>` placeholders.
+- The script.js block at lines 21–33 has the full header comment — read it before editing the system.
+
+### Supported languages
+
+| Code | Language | Notes |
+|---|---|---|
+| `en` | English | Default. Source for all HTML inline text. |
+| `id` | Indonesian | |
+| `th` | Thai | |
+| `ru` | Russian | |
+| `ar` | Arabic | RTL. Verify `<html dir>` toggle still works after any structural change. |
+| `zh-TW` | Traditional Chinese | |
+| `tl` | Filipino / Tagalog | |
+
+The `<option>` list in `index.html` (`#lang-select`) MUST list all 7 in the same order as the table.
+
+### **Mandatory rule** — when changing any user-facing string
+
+Any time you change wording that visitors see, you **MUST** update both:
+
+1. The inline English default in the relevant `.html` file (the text inside the `data-i18n` tag).
+2. **All 7 entries** for that key inside `I18N` in `script.js` — `en`, `id`, `th`, `ru`, `ar`, `zh-TW`, `tl`. Even if the change is a single sentence, every language block needs the matching translation appended or rewritten.
+
+Translating only English (or only a subset of languages) means non-English visitors see a stale English fallback while their selector says e.g. "中文" — a worse UX than no translation at all.
+
+> Existing translations are machine-grade. Before launch, have a native speaker review each language block in `I18N`.
+
+### Adding a new key
+
+1. Add `data-i18n="section.key"` to the HTML element with the English inline text.
+2. Add `'section.key': 'English text'` to the `en` block.
+3. Add the translated value to **all 6 other language blocks**.
+4. Bump cache version (§10), commit, push.
+
+### Adding an 8th language
+
+1. In `script.js`, append a new block to `I18N`: `'<code>': { ... }` with every key currently defined in `en` translated.
+2. In **all 4** HTML files, add `<option value="<code>">Name</option>` to `#lang-select` in the same order as the table above (append at end).
+3. If the new language is RTL, add it to the `dir` toggle logic in `script.js`.
+4. Bump cache version, commit, push.
+
+---
+
 ## 10. Cache-busting strategy
 
 Every HTML file references assets with a query string version:
@@ -328,6 +385,13 @@ These items are still placeholders — DO NOT mark site as production-ready unti
 2. Bump cache version.
 3. Commit + push.
 
+### Change a user-facing string (text visitors see)
+1. Update the inline English default in the relevant `.html` file (the text inside the `data-i18n="key"` tag).
+2. Update **all 7 entries** for that key in `I18N` inside `script.js` — `en`, `id`, `th`, `ru`, `ar`, `zh-TW`, `tl`. See §9c for the full i18n contract.
+3. Bump cache version, commit, push.
+
+> Skipping the non-English entries will leave non-English visitors seeing stale English copy while their selector claims another language — worse than not translating at all.
+
 ---
 
 ## 15. Reference images
@@ -340,7 +404,7 @@ These items are still placeholders — DO NOT mark site as production-ready unti
 ## 16. House rules for working in this repo
 
 - **Always commit + push after meaningful changes** — do not leave uncommitted work.
-- **Bump cache version on real CSS/JS changes**, keep it identical across all 5 HTML files.
+- **Bump cache version on real CSS/JS changes**, keep it identical across all 4 HTML files.
 - **Match existing code style**: vanilla, no frameworks, no preprocessors, no build step.
 - **Preserve the existing CSS layering pattern**: original rules stay; new rules append (override via specificity when needed).
 - **Never hardcode a real customer, capacity number, or certificate** — the site currently claims nothing it can't back up.
